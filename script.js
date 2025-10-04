@@ -113,80 +113,82 @@ function updateLanguage() {
 }
 
 // Contact Form Validation and Submission
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const company = document.getElementById('company').value.trim();
-    const message = document.getElementById('message').value.trim();
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage(
+                currentLang === 'ja' ?
+                '有効なメールアドレスを入力してください。' :
+                'Please enter a valid email address.',
+                'error'
+            );
+            return;
+        }
+
+        // Validate required fields
+        if (!name || !email || !message) {
+            showMessage(
+                currentLang === 'ja' ?
+                '必須項目をすべて入力してください。' :
+                'Please fill in all required fields.',
+                'error'
+            );
+            return;
+        }
+
+        // Simulate form submission (replace with actual API call)
         showMessage(
             currentLang === 'ja' ?
-            '有効なメールアドレスを入力してください。' :
-            'Please enter a valid email address.',
-            'error'
+            'お問い合わせありがとうございます。担当者より折り返しご連絡いたします。' :
+            'Thank you for your inquiry. We will get back to you soon.',
+            'success'
         );
-        return;
+
+        // Reset form
+        contactForm.reset();
+    });
+
+    // Show message function
+    function showMessage(text, type) {
+        // Remove existing message if any
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        // Create message element
+        const message = document.createElement('div');
+        message.className = `form-message ${type}`;
+        message.textContent = text;
+        message.style.cssText = `
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease;
+            ${type === 'success' ?
+                'background-color: #d1fae5; color: #065f46; border: 1px solid #10b981;' :
+                'background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444;'}
+        `;
+
+        contactForm.appendChild(message);
+
+        // Remove message after 5 seconds
+        setTimeout(() => {
+            message.style.opacity = '0';
+            setTimeout(() => message.remove(), 300);
+        }, 5000);
     }
-
-    // Validate required fields
-    if (!name || !email || !message) {
-        showMessage(
-            currentLang === 'ja' ?
-            '必須項目をすべて入力してください。' :
-            'Please fill in all required fields.',
-            'error'
-        );
-        return;
-    }
-
-    // Simulate form submission (replace with actual API call)
-    showMessage(
-        currentLang === 'ja' ?
-        'お問い合わせありがとうございます。担当者より折り返しご連絡いたします。' :
-        'Thank you for your inquiry. We will get back to you soon.',
-        'success'
-    );
-
-    // Reset form
-    contactForm.reset();
-});
-
-// Show message function
-function showMessage(text, type) {
-    // Remove existing message if any
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-
-    // Create message element
-    const message = document.createElement('div');
-    message.className = `form-message ${type}`;
-    message.textContent = text;
-    message.style.cssText = `
-        padding: 1rem;
-        margin-top: 1rem;
-        border-radius: 6px;
-        font-weight: 500;
-        animation: fadeIn 0.3s ease;
-        ${type === 'success' ?
-            'background-color: #d1fae5; color: #065f46; border: 1px solid #10b981;' :
-            'background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444;'}
-    `;
-
-    contactForm.appendChild(message);
-
-    // Remove message after 5 seconds
-    setTimeout(() => {
-        message.style.opacity = '0';
-        setTimeout(() => message.remove(), 300);
-    }, 5000);
 }
 
 // Header Scroll Effect
