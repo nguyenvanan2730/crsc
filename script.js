@@ -261,28 +261,102 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Scroll Reveal Animation
+// Scroll Reveal Animation (services + features)
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.2,
+    rootMargin: '0px 0px -10% 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+        if (!entry.isIntersecting) return;
+
+        const card = entry.target;
+        // Card final state
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0) scale(1)';
+        card.style.filter = 'blur(0)';
+        card.style.willChange = 'auto';
+
+        // Animate inner parts with slight extra stagger
+        const icon = card.querySelector('.service-icon');
+        const title = card.querySelector('.service-title');
+        const desc = card.querySelector('.service-description');
+        if (icon) {
+            requestAnimationFrame(() => {
+                icon.style.opacity = '1';
+                icon.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+            });
         }
+        if (title) {
+            requestAnimationFrame(() => {
+                title.style.opacity = '1';
+                title.style.transform = 'translateY(0)';
+            });
+        }
+        if (desc) {
+            requestAnimationFrame(() => {
+                desc.style.opacity = '1';
+                desc.style.transform = 'translateY(0)';
+            });
+        }
+
+        obs.unobserve(card);
     });
 }, observerOptions);
 
-// Observe service cards and features
-const animateElements = document.querySelectorAll('.service-card, .feature');
-animateElements.forEach(el => {
+// Staggered, emphasized reveal for service cards
+const serviceCards = document.querySelectorAll('.services .service-card');
+serviceCards.forEach((el, idx) => {
+    // Card initial state (stronger emphasis)
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
+    el.style.transform = 'translateY(36px) scale(0.96)';
+    el.style.filter = 'blur(6px)';
+    el.style.transition = [
+        'opacity 900ms ease',
+        'transform 900ms cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'filter 700ms ease'
+    ].join(', ');
+    el.style.transitionDelay = `${idx * 120}ms`;
+    el.style.willChange = 'opacity, transform, filter';
+
+    // Inner parts initial state
+    const icon = el.querySelector('.service-icon');
+    const title = el.querySelector('.service-title');
+    const desc = el.querySelector('.service-description');
+    if (icon) {
+        icon.style.opacity = '0';
+        icon.style.transform = 'translateY(10px) scale(0.9) rotate(-3deg)';
+        icon.style.transition = 'opacity 700ms ease, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1.2)';
+        icon.style.transitionDelay = `${idx * 120 + 150}ms`;
+        icon.style.willChange = 'opacity, transform';
+    }
+    if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(10px)';
+        title.style.transition = 'opacity 650ms ease, transform 650ms ease';
+        title.style.transitionDelay = `${idx * 120 + 200}ms`;
+        title.style.willChange = 'opacity, transform';
+    }
+    if (desc) {
+        desc.style.opacity = '0';
+        desc.style.transform = 'translateY(12px)';
+        desc.style.transition = 'opacity 650ms ease, transform 650ms ease';
+        desc.style.transitionDelay = `${idx * 120 + 260}ms`;
+        desc.style.willChange = 'opacity, transform';
+    }
+
+    revealObserver.observe(el);
+});
+
+// Subtle reveal for about features (no stagger needed)
+const features = document.querySelectorAll('.about .feature');
+features.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+    el.style.willChange = 'opacity, transform';
+    revealObserver.observe(el);
 });
 
 // Active Navigation Highlight on Scroll

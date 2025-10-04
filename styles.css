@@ -343,8 +343,10 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
-    transition: var(--transition);
+    transition: transform 300ms ease, box-shadow 300ms ease;
     text-align: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 .service-card:hover {
@@ -803,7 +805,6 @@ textarea:focus {
     }
 }
 
-.service-card,
 .feature {
     animation: fadeIn 0.6s ease-out;
 }
