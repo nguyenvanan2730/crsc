@@ -359,6 +359,35 @@ features.forEach(el => {
     revealObserver.observe(el);
 });
 
+// Reveal: tech stack cards + chips
+const stackCards = document.querySelectorAll('.stack .stack-card');
+stackCards.forEach((card, idx) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(28px) scale(0.98)';
+    card.style.transition = 'opacity 800ms ease, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1)';
+    card.style.transitionDelay = `${idx * 100}ms`;
+    revealObserver.observe(card);
+
+    const chips = card.querySelectorAll('.chip');
+    chips.forEach((chip, cIdx) => {
+        chip.style.opacity = '0';
+        chip.style.transform = 'translateY(8px)';
+        chip.style.transition = 'opacity 500ms ease, transform 500ms ease';
+        chip.style.transitionDelay = `${idx * 100 + 150 + cIdx * 60}ms`;
+        revealObserver.observe(chip);
+    });
+});
+
+// Reveal: pricing models (merged layout)
+const pricingModels = document.querySelectorAll('.pricing .pricing-model');
+pricingModels.forEach((card, idx) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(24px)';
+    card.style.transition = 'opacity 700ms ease, transform 700ms ease';
+    card.style.transitionDelay = `${idx * 120}ms`;
+    revealObserver.observe(card);
+});
+
 // Active Navigation Highlight on Scroll
 const sections = document.querySelectorAll('section[id]');
 
