@@ -3,11 +3,35 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navList = document.querySelector('.nav-list');
 const langToggle = document.getElementById('langToggle');
 const contactForm = document.getElementById('contactForm');
+const heroSection = document.querySelector('.hero');
+const heroSlideshow = document.querySelector('.hero-slideshow');
+const headerEl = document.querySelector('.header');
 
 // Create and add backdrop for mobile menu
 const menuBackdrop = document.createElement('div');
 menuBackdrop.className = 'menu-backdrop';
 document.body.appendChild(menuBackdrop);
+
+// Dynamic viewport height for mobile (full-bleed hero)
+const setVh = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+
+const setHeaderH = () => {
+    const h = headerEl ? headerEl.offsetHeight : 0;
+    document.documentElement.style.setProperty('--header-h', `${h}px`);
+};
+
+const updateViewportVars = () => {
+    setVh();
+    setHeaderH();
+};
+
+updateViewportVars();
+window.addEventListener('resize', updateViewportVars, { passive: true });
+window.addEventListener('orientationchange', () => setTimeout(updateViewportVars, 100));
+window.addEventListener('load', updateViewportVars);
 
 // Current language state
 let currentLang = 'ja';
@@ -109,6 +133,36 @@ function updateLanguage() {
         langJa.classList.remove('active');
         langEn.classList.add('active');
         document.documentElement.lang = 'en';
+    }
+}
+
+// Hero background slideshow
+if (heroSlideshow) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Default images representing services (AI, IoT, Development, Cloud/Business)
+    const heroImages = [
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=60', // AI
+        'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1920&q=60', // IoT
+        'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1920&q=60', // Development
+        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=60'  // Cloud/Infra
+    ];
+
+    const slides = heroImages.map((url, idx) => {
+        const div = document.createElement('div');
+        div.className = 'hero-slide' + (idx === 0 ? ' active' : '');
+        div.style.backgroundImage = `url("${url}")`;
+        heroSlideshow.appendChild(div);
+        return div;
+    });
+
+    if (!prefersReducedMotion && slides.length > 1) {
+        let current = 0;
+        const intervalMs = Number(heroSection?.dataset.interval) || 7000;
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, intervalMs);
     }
 }
 
