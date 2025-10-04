@@ -6,8 +6,9 @@
 }
 
 :root {
-    --primary-color: #1d4ed8;
-    --secondary-color: #1e3a8a;
+    --primary-color: #D96846;
+    --secondary-color: #6DB3D3;
+    --accent-color: #843B62;
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --bg-light: #f9fafb;
@@ -59,6 +60,37 @@ body {
     font-size: 1.75rem;
     color: var(--primary-color);
     font-weight: 700;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.company-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.company-tagline {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.2;
 }
 
 .nav-list {
@@ -156,7 +188,10 @@ body {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(135deg, rgba(15, 76, 173, 0.78) 0%, rgba(29, 78, 216, 0.68) 45%, rgba(30, 64, 175, 0.78) 100%);
+    background: linear-gradient(135deg,
+        rgba(217, 104, 70, 0.85) 0%,
+        rgba(109, 179, 211, 0.75) 45%,
+        rgba(132, 59, 98, 0.85) 100%);
 }
 
 .hero::after {
@@ -217,7 +252,7 @@ body {
 .tile-ai {
     top: -40px;
     left: -60px;
-    background-color: rgba(59, 130, 246, 0.35);
+    background-color: rgba(217, 104, 70, 0.35);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 24h40M12 40h40M20 16h24a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V24a8 8 0 0 1 8-8z'/%3E%3Ccircle cx='24' cy='32' r='4'/%3E%3Ccircle cx='40' cy='32' r='4'/%3E%3C/svg%3E");
 }
 
@@ -226,7 +261,7 @@ body {
     right: -40px;
     width: 360px;
     height: 360px;
-    background-color: rgba(29, 78, 216, 0.3);
+    background-color: rgba(109, 179, 211, 0.3);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='32' cy='32' r='8'/%3E%3Ccircle cx='12' cy='20' r='6'/%3E%3Ccircle cx='52' cy='20' r='6'/%3E%3Ccircle cx='12' cy='44' r='6'/%3E%3Ccircle cx='52' cy='44' r='6'/%3E%3Cpath d='M18 22l8 6m12 0l8-6M26 36l-8 6m20-6l8 6M32 24V12m0 28v12'/%3E%3C/svg%3E");
 }
 
@@ -237,7 +272,7 @@ body {
     height: 280px;
     margin-top: -140px;
     margin-left: -140px;
-    background-color: rgba(37, 99, 235, 0.32);
+    background-color: rgba(132, 59, 98, 0.32);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 24l-8 8 8 8M44 24l8 8-8 8M30 44l4-24'/%3E%3C/svg%3E");
 }
 
@@ -397,9 +432,27 @@ body {
 
 .about-text p {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.8;
     font-size: 1.125rem;
+}
+
+.about-intro {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.9;
+}
+
+.about-mission {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    background: linear-gradient(135deg, rgba(217, 104, 70, 0.08), rgba(109, 179, 211, 0.08));
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
 }
 
 .about-features {
@@ -708,6 +761,13 @@ body {
     line-height: 1.6;
 }
 
+.footer-tagline {
+    font-size: 0.9375rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
 .footer-section ul {
     list-style: none;
     padding: 0;
@@ -756,6 +816,23 @@ body {
 
 /* Tablet Styles (768px - 1023px) */
 @media (max-width: 1023px) {
+    .company-name {
+        font-size: 0.9375rem;
+    }
+
+    .company-tagline {
+        font-size: 0.6875rem;
+    }
+
+    .about-intro {
+        font-size: 1.125rem;
+    }
+
+    .about-mission {
+        font-size: 1.0625rem;
+        padding: 1.25rem;
+    }
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -805,6 +882,31 @@ body {
 
 /* Mobile Styles (≤767px) */
 @media (max-width: 767px) {
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .company-name {
+        font-size: 0.875rem;
+    }
+
+    .company-tagline {
+        font-size: 0.625rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+    }
+
+    .about-mission {
+        font-size: 0.9375rem;
+        padding: 1rem;
+    }
+
     .menu-toggle {
         display: flex;
     }

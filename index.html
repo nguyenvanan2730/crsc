@@ -14,7 +14,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>CRSC</h1>
+                    <img src="assets/images/logo.png" alt="CRSC Logo" class="logo-img">
+                    <div class="company-info">
+                        <span class="company-name" data-ja="株式会社CRSC" data-en="CRSC Corporation">株式会社CRSC</span>
+                        <span class="company-tagline" data-ja="Together We Build A Better Future" data-en="Together We Build A Better Future">Together We Build A Better Future</span>
+                    </div>
                 </div>
                 <nav class="nav">
                     <button class="menu-toggle" aria-label="Toggle menu">
@@ -25,7 +29,7 @@
                     <ul class="nav-list">
                         <li><a href="#home" data-ja="ホーム" data-en="Home">ホーム</a></li>
                         <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
-                        <li><a href="#about" data-ja="会社概要" data-en="About">会社概要</a></li>
+                        <li><a href="#about" data-ja="CRSCとは" data-en="About">CRSCとは</a></li>
                         <li class="lang-switch">
                             <button id="langToggle" class="lang-btn" aria-label="Language switch">
                                 <span class="lang-ja active">日本語</span> / <span class="lang-en">English</span>
@@ -42,8 +46,8 @@
         <div class="hero-slideshow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title" data-ja="テクノロジーで、人とビジネスをもっと身近に" data-en="Bridging people and business with technology">テクノロジーで、人とビジネスをもっと身近に</h2>
-                <p class="hero-text" data-ja="最先端テクノロジーと徹底した課題理解で、貴社の技術課題を包括的に解決し、ビジネスの成功を確実にします。" data-en="Delivering cost optimization and high-quality results to Japanese clients from Vietnam">最先端テクノロジーと徹底した課題理解で、貴社の技術課題を包括的に解決し、ビジネスの成功を確実にします。</p>
+                <h2 class="hero-title" data-ja="テクノロジーで、人とビジネスをもっと身近に" data-en="Bringing people and business closer through technology">テクノロジーで、人とビジネスをもっと身近に</h2>
+                <p class="hero-text" data-ja="最先端テクノロジーと徹底した課題理解で、貴社の技術課題を包括的に解決し、ビジネスの成功を確実にします。" data-en="Solving your technical challenges comprehensively with cutting-edge technology and deep problem understanding, ensuring business success">最先端テクノロジーと徹底した課題理解で、貴社の技術課題を包括的に解決し、ビジネスの成功を確実にします。</p>
                 <a href="#services" class="cta-button" data-ja="サービスを見る" data-en="View Services">サービスを見る</a>
             </div>
         </div>
@@ -55,7 +59,7 @@
             <h2 class="section-title" data-ja="提供サービス" data-en="Our Services">提供サービス</h2>
             <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card">
+                <!-- <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="2"></circle>
@@ -75,9 +79,23 @@
                     </div>
                     <h3 class="service-title" data-ja="人工知能（AI）& LLM統合" data-en="AI & LLM Integration">人工知能（AI）& LLM統合</h3>
                     <p class="service-description" data-ja="予測分析からチャットボットや業務自動化まで、最新のAI技術とLLMを組み合わせたソリューションを提供します。" data-en="We provide solutions combining cutting-edge AI technology and LLMs, from predictive analytics to chatbots and business automation.">予測分析からチャットボットや業務自動化まで、最新のAI技術とLLMを組み合わせたソリューションを提供します。</p>
-                </div>
+                </div> -->
 
                 <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-ja="AI駆動開発" data-en="AI-Driven Development">AI駆動開発</h3>
+                    <p class="service-description" data-ja="生成AIと自動化技術を活用し、開発プロセス全体を高速化。コード生成、テスト自動化、インフラ構築まで、AIが開発チームをサポートします。" data-en="Accelerate your entire development process with generative AI and automation. From code generation to test automation and infrastructure setup, AI empowers your development team.">生成AIと自動化技術を活用し、開発プロセス全体を高速化。コード生成、テスト自動化、インフラ構築まで、AIが開発チームをサポートします。</p>
+                </div>
+
+                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -89,8 +107,8 @@
                             <rect x="10" y="10" width="4" height="4" rx="1"></rect>
                         </svg>
                     </div>
-                    <h3 class="service-title" data-ja="IoTソリューション" data-en="IoT Solutions">IoTソリューション</h3>
-                    <p class="service-description" data-ja="ドローンを活用したアプリケーションやスマートセンサー、コネクテッドデバイスの開発など、エンドツーエンドのIoTサービスを展開します。" data-en="We offer end-to-end IoT services including drone applications, smart sensors, and connected device development.">ドローンを活用したアプリケーションやスマートセンサー、コネクテッドデバイスの開発など、エンドツーエンドのIoTサービスを展開します。</p>
+                    <h3 class="service-title" data-ja="IoT & ロボティクス" data-en="IoT & Robotics">IoT & ロボティクス</h3>
+                    <p class="service-description" data-ja="ドローン、スマートセンサー、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。" data-en="We offer end-to-end IoT and robotics solutions including drones, smart sensors, and robot control systems.">ドローン、スマートセンサー、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。</p>
                 </div>
 
                 <!-- Service 3 -->
@@ -129,10 +147,11 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title" data-ja="会社概要" data-en="About Us">会社概要</h2>
+            <h2 class="section-title" data-ja="株式会社CRSCとは" data-en="About CRSC Corporation">株式会社CRSCとは</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p data-ja="ベトナムに拠点を置くオフショア企業として、当社は日本のお客様に幅広いサービスを提供しています。テクノロジーで、人とビジネスをもっと身近にソリューションにより、コスト最適化と高品質な成果を実現します。" data-en="As an offshore company based in Vietnam, we provide a wide range of services to Japanese clients. Through reliable and flexible solutions, we deliver cost optimization and high-quality results.">ベトナムに拠点を置くオフショア企業として、当社は日本のお客様に幅広いサービスを提供しています。テクノロジーで、人とビジネスをもっと身近にソリューションにより、コスト最適化と高品質な成果を実現します。</p>
+                    <p class="about-intro" data-ja="株式会社CRSCは、2021年に設立されたベトナムに拠点を置くオフショア開発企業です。最先端のAI技術とロボティクス、IoTソリューションを駆使し、日本のお客様に革新的な技術サービスを提供しています。" data-en="CRSC Corporation, established in 2021, is an offshore development company based in Vietnam. We provide innovative technology services to Japanese clients using cutting-edge AI technology, robotics, and IoT solutions.">株式会社CRSCは、2021年に設立されたベトナムに拠点を置くオフショア開発企業です。最先端のAI技術とロボティクス、IoTソリューションを駆使し、日本のお客様に革新的な技術サービスを提供しています。</p>
+                    <p class="about-mission" data-ja="私たちは「テクノロジーで、人とビジネスをもっと身近に」をミッションに、AI駆動開発から業務自動化まで、お客様の技術課題を包括的に解決し、ビジネスの成功を確実にサポートします。" data-en="With our mission to 'Bring people and business closer through technology', we comprehensively solve your technical challenges from AI-driven development to business automation, ensuring your business success.">私たちは「テクノロジーで、人とビジネスをもっと身近に」をミッションに、AI駆動開発から業務自動化まで、お客様の技術課題を包括的に解決し、ビジネスの成功を確実にサポートします。</p>
                     <div class="about-features">
                         <div class="feature">
                             <h4 data-ja="✓ 信頼性" data-en="✓ Reliability">✓ 信頼性</h4>
@@ -175,6 +194,11 @@
                         <span class="chip" data-ja="LangChain" data-en="LangChain">LangChain</span>
                         <span class="chip" data-ja="RAG" data-en="RAG">RAG</span>
                         <span class="chip" data-ja="ベクトルDB" data-en="Vector DB">ベクトルDB</span>
+                        <span class="chip" data-ja="TensorFlow" data-en="TensorFlow">TensorFlow</span>
+                        <span class="chip" data-ja="PyTorch" data-en="PyTorch">PyTorch</span>
+                        <span class="chip" data-ja="Keras" data-en="Keras">Keras</span>
+                        <span class="chip" data-ja="Scikit-learn" data-en="Scikit-learn">Scikit-learn</span>
+                        <span class="chip" data-ja="Hugging Face" data-en="Hugging Face">Hugging Face</span>
                     </div>
                 </div>
 
@@ -196,6 +220,10 @@
                         <span class="chip">Lambda</span>
                         <span class="chip">CloudFront</span>
                         <span class="chip">S3</span>
+                        <span class="chip">Terraform</span>
+                        <span class="chip">Ansible</span>
+                        <span class="chip">Jenkins</span>
+                        <span class="chip">GitHub Actions</span>
                     </div>
                 </div>
 
@@ -217,6 +245,12 @@
                         <span class="chip">Node.js</span>
                         <span class="chip">Flutter</span>
                         <span class="chip">Swift / Kotlin</span>
+                        <span class="chip">React Native</span>
+                        <span class="chip">Unity</span>
+                        <span class="chip">Swift</span>
+                        <span class="chip">Kotlin</span>
+                        <span class="chip">Laravel</span>
+                        <span class="chip">PHP</span>
                     </div>
                 </div>
 
@@ -240,13 +274,18 @@
                         <span class="chip">Docker</span>
                         <span class="chip">Kubernetes</span>
                         <span class="chip">ESP32 / MQTT</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">MongoDB</span>
+                        <span class="chip">ROS (Robot OS)</span>
+                        <span class="chip">MQTT</span>
+                        <span class="chip">InfluxDB</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing / Engagement Models -->
+    <!-- Pricing / Engagement Models
     <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="section-title" data-ja="価格・契約モデル" data-en="Engagement Models">価格・契約モデル</h2>
@@ -280,12 +319,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-ja="株式会社CRSC" data-en="CRSC Corporation">株式会社CRSC</h4>
+                    <p class="footer-tagline" data-ja="Together We Build A Better Future" data-en="Together We Build A Better Future">Together We Build A Better Future</p>
+                </div>
                 <div class="footer-section">
                     <h4 data-ja="連絡先" data-en="Contact">連絡先</h4>
                     <ul class="footer-contact">
@@ -299,12 +342,12 @@
                     <ul>
                         <li><a href="#home" data-ja="ホーム" data-en="Home">ホーム</a></li>
                         <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
-                        <li><a href="#about" data-ja="会社概要" data-en="About">会社概要</a></li>
+                        <li><a href="#about" data-ja="CRSCとは" data-en="About">CRSCとは</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2022 CRSC. <span data-ja="All rights reserved." data-en="All rights reserved.">All rights reserved.</span></p>
+                <p>&copy; 2021 <span data-ja="株式会社CRSC" data-en="CRSC Corporation">株式会社CRSC</span>. <span data-ja="All rights reserved." data-en="All rights reserved.">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
