@@ -29,7 +29,7 @@
                     <ul class="nav-list">
                         <li><a href="#home" data-ja="ホーム" data-en="Home">ホーム</a></li>
                         <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
-                        <li><a href="#about" data-ja="CRSCとは" data-en="About">CRSCとは</a></li>
+                        <li><a href="#about" data-ja="CRSCとは" data-en="About CRSC">CRSCとは</a></li>
                         <li class="lang-switch">
                             <button id="langToggle" class="lang-btn" aria-label="Language switch">
                                 <span class="lang-ja active">日本語</span> / <span class="lang-en">English</span>
@@ -108,7 +108,7 @@
                         </svg>
                     </div>
                     <h3 class="service-title" data-ja="IoT & ロボティクス" data-en="IoT & Robotics">IoT & ロボティクス</h3>
-                    <p class="service-description" data-ja="ドローン、スマートセンサー、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。" data-en="We offer end-to-end IoT and robotics solutions including drones, smart sensors, and robot control systems.">ドローン、スマートセンサー、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。</p>
+                    <p class="service-description" data-ja="ドローン、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。" data-en="We offer end-to-end IoT and robotics solutions including drones, and robot control systems.">ドローン、ロボット制御システムの開発まで、エンドツーエンドのIoT・ロボティクスソリューションを提供します。</p>
                 </div>
 
                 <!-- Service 3 -->
@@ -193,12 +193,41 @@
                         <span class="chip" data-ja="Transformers" data-en="Transformers">Transformers</span>
                         <span class="chip" data-ja="LangChain" data-en="LangChain">LangChain</span>
                         <span class="chip" data-ja="RAG" data-en="RAG">RAG</span>
-                        <span class="chip" data-ja="ベクトルDB" data-en="Vector DB">ベクトルDB</span>
+                        <span class="chip" data-ja="ベクトルデータベース" data-en="Vector Database">ベクトルデータベース</span>
                         <span class="chip" data-ja="TensorFlow" data-en="TensorFlow">TensorFlow</span>
                         <span class="chip" data-ja="PyTorch" data-en="PyTorch">PyTorch</span>
                         <span class="chip" data-ja="Keras" data-en="Keras">Keras</span>
                         <span class="chip" data-ja="Scikit-learn" data-en="Scikit-learn">Scikit-learn</span>
                         <span class="chip" data-ja="Hugging Face" data-en="Hugging Face">Hugging Face</span>
+                        <span class="chip" data-ja="NLP（自然言語処理）" data-en="NLP (Natural Language Processing)">NLP（自然言語処理）</span>
+                    </div>
+                </div>
+
+                <!-- Robotics / IoT -->
+                <div class="stack-card">
+                    <div class="stack-card-head">
+                        <div class="stack-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" rx="2"></rect>
+                                <rect x="14" y="3" width="7" height="7" rx="2"></rect>
+                                <rect x="3" y="14" width="7" height="7" rx="2"></rect>
+                                <rect x="14" y="14" width="7" height="7" rx="2"></rect>
+                            </svg>
+                        </div>
+                        <h3 data-ja="ロボティクス / IoT" data-en="Robotics / IoT">ロボティクス / IoT</h3>
+                    </div>
+                    <div class="stack-chips">
+                        <span class="chip">PostgreSQL</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">MongoDB</span>
+                        <span class="chip">Redis</span>
+                        <span class="chip">InfluxDB</span>
+                        <span class="chip" data-ja="Kafka（分散メッセージング基盤）" data-en="Kafka (Distributed Messaging)">Kafka（分散メッセージング基盤）</span>
+                        <span class="chip">Docker</span>
+                        <span class="chip">Kubernetes</span>
+                        <span class="chip">ESP32</span>
+                        <span class="chip">MQTT</span>
+                        <span class="chip" data-ja="ROS（Robot Operating System）" data-en="ROS (Robot Operating System)">ROS（Robot Operating System）</span>
                     </div>
                 </div>
 
@@ -217,13 +246,13 @@
                         <span class="chip">AWS</span>
                         <span class="chip">GCP</span>
                         <span class="chip">Azure</span>
-                        <span class="chip">Lambda</span>
+                        <span class="chip">AWS Lambda</span>
                         <span class="chip">CloudFront</span>
                         <span class="chip">S3</span>
-                        <span class="chip">Terraform</span>
-                        <span class="chip">Ansible</span>
-                        <span class="chip">Jenkins</span>
+                        <span class="chip" data-ja="Terraform（IaC / インフラ自動化）" data-en="Terraform (IaC / Infrastructure Automation)">Terraform（IaC / インフラ自動化）</span>
+                        <span class="chip" data-ja="Ansible（構成管理）" data-en="Ansible (Configuration Management)">Ansible（構成管理）</span>
                         <span class="chip">GitHub Actions</span>
+                        <span class="chip" data-ja="Argo CD（CI/CD自動化）" data-en="Argo CD (CI/CD Automation)">Argo CD（CI/CD自動化）</span>
                     </div>
                 </div>
 
@@ -243,42 +272,15 @@
                         <span class="chip">React</span>
                         <span class="chip">Next.js</span>
                         <span class="chip">Node.js</span>
-                        <span class="chip">Flutter</span>
-                        <span class="chip">Swift / Kotlin</span>
-                        <span class="chip">React Native</span>
-                        <span class="chip">Unity</span>
+                        <span class="chip">Vue.js</span>
+                        <span class="chip">Nuxt.js</span>
                         <span class="chip">Swift</span>
                         <span class="chip">Kotlin</span>
+                        <span class="chip">Flutter</span>
+                        <span class="chip">React Native</span>
+                        <span class="chip">Unity</span>
                         <span class="chip">Laravel</span>
                         <span class="chip">PHP</span>
-                    </div>
-                </div>
-
-                <!-- Data / IoT -->
-                <div class="stack-card">
-                    <div class="stack-card-head">
-                        <div class="stack-icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="7" rx="2"></rect>
-                                <rect x="14" y="3" width="7" height="7" rx="2"></rect>
-                                <rect x="3" y="14" width="7" height="7" rx="2"></rect>
-                                <rect x="14" y="14" width="7" height="7" rx="2"></rect>
-                            </svg>
-                        </div>
-                        <h3 data-ja="データ / IoT" data-en="Data / IoT">データ / IoT</h3>
-                    </div>
-                    <div class="stack-chips">
-                        <span class="chip">PostgreSQL</span>
-                        <span class="chip">Redis</span>
-                        <span class="chip">Kafka</span>
-                        <span class="chip">Docker</span>
-                        <span class="chip">Kubernetes</span>
-                        <span class="chip">ESP32 / MQTT</span>
-                        <span class="chip">MySQL</span>
-                        <span class="chip">MongoDB</span>
-                        <span class="chip">ROS (Robot OS)</span>
-                        <span class="chip">MQTT</span>
-                        <span class="chip">InfluxDB</span>
                     </div>
                 </div>
             </div>
@@ -332,9 +334,9 @@
                 <div class="footer-section">
                     <h4 data-ja="連絡先" data-en="Contact">連絡先</h4>
                     <ul class="footer-contact">
-                        <li><span data-ja="電話：+84-xxx-xxx-xxxx" data-en="Phone: +84-xxx-xxx-xxxx">電話：+84-xxx-xxx-xxxx</span></li>
+                        <li><span data-ja="電話：+81-070-123-4567" data-en="Phone: +81-070-123-4567">電話：+81-070-123-4567</span></li>
                         <li><span data-ja="メール：info@crsc-corp.com" data-en="Email: info@crsc-corp.com">メール：info@crsc-corp.com</span></li>
-                        <li><span data-ja="所在地：川崎市、神奈川県、日本" data-en="Address: Ho Chi Minh City, Vietnam">所在地：川崎市、神奈川県、日本</span></li>
+                        <li><span data-ja="所在地：川崎市、神奈川県、日本" data-en="Address: Kawasaki City, Kanagawa, Japan">所在地：川崎市、神奈川県、日本</span></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -342,7 +344,7 @@
                     <ul>
                         <li><a href="#home" data-ja="ホーム" data-en="Home">ホーム</a></li>
                         <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
-                        <li><a href="#about" data-ja="CRSCとは" data-en="About">CRSCとは</a></li>
+                        <li><a href="#about" data-ja="CRSCとは" data-en="About CRSC">CRSCとは</a></li>
                     </ul>
                 </div>
             </div>

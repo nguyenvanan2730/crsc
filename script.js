@@ -139,12 +139,12 @@ function updateLanguage() {
 // Hero background slideshow
 if (heroSlideshow) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Default images representing services (AI, IoT, Development, Cloud/Business)
+    // Images representing CRSC services: AI-driven development, IoT & Robotics, Software Development, IT Outsourcing
     const heroImages = [
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=60', // AI
-        'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1920&q=60', // IoT
-        'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1920&q=60', // Development
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=60'  // Cloud/Infra
+        'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1920&q=80', // AI/Machine Learning - neural network visualization
+        'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1920&q=80', // Robotics - robotic arm manufacturing
+        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80', // Software Development - team collaboration
+        'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1920&q=80'  // IT/Business - professional tech workspace
     ];
 
     const slides = heroImages.map((url, idx) => {
