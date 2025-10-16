@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Install dev deps if present; don't fail build if no package.json
+        - 'if [ -f package.json ]; then npm ci --cache .npm --prefer-offline; else echo "No package.json, skipping npm ci"; fi'
+    build:
+      commands:
+        # Static site — no build step required
+        - 'echo "Static site: no build step"'
+  artifacts:
+    # Publish directly from the repository root
+    baseDirectory: .
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - assets/**/*
+  cache:
+    paths:
+      - node_modules/**/*
+      - .npm/**/*
