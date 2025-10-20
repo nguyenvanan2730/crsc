@@ -33,6 +33,18 @@ body {
     background-color: var(--bg-white);
 }
 
+/* Remove all focus outlines and rectangles from links */
+a {
+    outline: none;
+}
+
+a:focus,
+a:active,
+a:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -120,6 +132,18 @@ body {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    outline: none;
+}
+
+.nav-list a:hover,
+.nav-list a:focus,
+.nav-list a:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-list a:focus-visible {
+    outline: none;
 }
 
 .nav-list a:hover {
@@ -795,10 +819,19 @@ body {
     color: #9ca3af;
     text-decoration: none;
     transition: var(--transition);
+    outline: none;
 }
 
-.footer-section ul li a:hover {
+.footer-section ul li a:hover,
+.footer-section ul li a:focus,
+.footer-section ul li a:active {
     color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.footer-section ul li a:focus-visible {
+    outline: none;
 }
 
 .footer-contact li span {

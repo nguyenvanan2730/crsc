@@ -78,11 +78,19 @@ navLinks.forEach(link => {
     });
 });
 
-// Smooth Scrolling
-navLinks.forEach(link => {
+// Keep navLinks for active navigation highlight
+const navLinksForHighlight = document.querySelectorAll('.nav-list a[href^="#"]');
+
+// Smooth Scrolling - apply to all anchor links (header + footer)
+const allAnchorLinks = document.querySelectorAll('a[href^="#"]:not(.logo)');
+allAnchorLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
+
+        // Skip if it's just "#"
+        if (targetId === '#') return;
+
+        e.preventDefault();
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
@@ -404,7 +412,7 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    navLinks.forEach(link => {
+    navLinksForHighlight.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
@@ -444,3 +452,15 @@ initializeFormPlaceholders();
 document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflowX = 'hidden';
 });
+
+// Logo click - scroll to top
+const logoLink = document.querySelector('.logo');
+if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
