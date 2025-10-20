@@ -66,6 +66,20 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    text-decoration: none;
+    outline: none;
+}
+
+.logo:hover,
+.logo:focus,
+.logo:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.logo:focus-visible {
+    outline: none;
 }
 
 .logo-img {
